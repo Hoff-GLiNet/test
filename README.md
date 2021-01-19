@@ -22,11 +22,17 @@ Branch Introduction
 
 - **openwrt-trunk** support model: XE300
 
-- **openwrt-18.06-s1300**. If you need to flash OpenWrt firmware on B1300/S1300, you need to modify the partition table using the intermediate firmware in this branch.
+- **openwrt-18.06-s1300**. 
 
-- **openwrt-19.07.5**. This branch is under developing, all models (except IPQ series) will be transferred to this branch later. Version 3.201 is developed based on this branch.
+If you need to flash OpenWrt firmware on B1300/S1300, you need to modify the partition table using the intermediate firmware in this branch.
 
-- **openwrt-19.07.2, openwrt-18.06, release**. No product currently uses those branch, those branch just used in transition, reserved source.
+- **openwrt-19.07.5**. 
+
+This branch is under developing, all models (except IPQ series) will be transferred to this branch later. Version 3.201 is developed based on this branch.
+
+- **openwrt-19.07.2, openwrt-18.06, release**. 
+
+No product currently uses those branch, those branch just used in transition, reserved source.
 
 - For example, if you want to compile the XE300 production target, you need to use ```git checkout openwrt-trunk``` command to switch openwrt-trunk branches. 
 
