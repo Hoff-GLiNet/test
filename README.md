@@ -34,7 +34,7 @@ Branch Introduction
 
     No product currently uses those branch, those branch just used in transition, reserved source.
 
-**For example, if you want to compile the XE300 production target, you need to use ```git checkout openwrt-trunk``` command to switch openwrt-trunk branches.**
+**For example, if you want to compile the XE300 production target, you need to use *```git checkout openwrt-trunk```* command to switch openwrt-trunk branches.**
 
 Prerequisites  
 =============  
