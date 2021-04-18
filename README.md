@@ -15,6 +15,7 @@ Branch Introduction
 - **openwrt-18.06-siflower** Only supports SF1200
 
 - **openwrt-18.06-s1300** Support compiling openwrt firmware for S1300
+    
     If you need to flash OpenWrt firmware on S1300, you need to modify the partition table using the intermediate firmware in this branch
 
 - **openwrt-18.06** Compile versions before 3.105 firmware based on this source code
