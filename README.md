@@ -10,7 +10,7 @@ Feature
 - Support kernel driver which isn't support by kernel-tree  
 - Keep updating with stock firmware  
 
-Branch Introduction
+Branches Introduction
 =======
 - **openwrt-18.06-siflower** Only supports SF1200
 
@@ -26,7 +26,7 @@ Branch Introduction
 
 - **openwrt-trunk** Compile S1300 firmware supporting emmc
 
-**For example, if you want to use openwrt-19.07.7 to compile the production firmware, you need to use *```git checkout openwrt-19.07.7```* command to switch openwrt-19.07.7 branches.**
+**For example, if you want to use openwrt-19.07.7 to compile the production firmware, you need to use *```git checkout openwrt-19.07.7```* command to switch openwrt-19.07.7 branch.**
 
 Prerequisites  
 =============  
