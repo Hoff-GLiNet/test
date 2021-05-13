@@ -28,6 +28,18 @@ Branches Introduction
 
 **For example, if you want to use openwrt-19.07.7 to compile the production firmware, you need to use *```git checkout openwrt-19.07.7```* command to switch openwrt-19.07.7 branch.**
 
+Product Branch Relationship Table
+=======
+| Product | Branch | OpenWrt officially started to support the version | Other |
+| :-----| :----- | :---- | :---- |
+| AR150 | openwrt-18.06, openwrt-18.06.5, openwrt-19.07.7 | 15.05 |  |
+| MIFI | openwrt-18.06, openwrt-18.06.5, openwrt-19.07.7 | 15.05 |  |
+| AR300M | openwrt-18.06, openwrt-18.06.5, openwrt-19.07.7 | 15.05 |  |
+| MT300N-V2 | openwrt-18.06, openwrt-18.06.5, openwrt-19.07.7 | 15.05 | The wifi drivers are closed source, we do not guarantee that OpenWrt drivers are stable |
+
+
+| AP1300 | https://github.com/openwrt/openwrt | We don't make patch for this project |
+
 Prerequisites
 =============
 
