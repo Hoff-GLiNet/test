@@ -37,21 +37,21 @@ Product Branch Relationship Table
 | :-----| :----- | :---- | :---- |
 | AR150 | openwrt-18.06/openwrt-18.06.5/openwrt-19.07.7 | >17.01 |  |
 | MIFI | openwrt-18.06/openwrt-18.06.5/openwrt-19.07.7 | >17.01 |  |
-| AR300M | openwrt-18.06/openwrt-18.06.5/openwrt-19.07.7 | >17.01 | OpenWrt Official only supports compiling nor firmware |
-| MT300N-V2 | openwrt-18.06/openwrt-18.06.5/openwrt-19.07.7 | | GL fireware wifi drivers are closed source, we do not guarantee that OpenWrt drivers are stable |
+| AR300M | openwrt-18.06/openwrt-18.06.5/openwrt-19.07.7 | 17.01~19.07(nor)/>21.02(nand) | |
+| MT300N-V2 | openwrt-18.06/openwrt-18.06.5/openwrt-19.07.7 | >18.06 | GL fireware wifi drivers are closed source, we do not guarantee that OpenWrt drivers are stable |
 | B1300 |  | >18.06 | GL fireware use QSDK, if you use openwrt to compile firmware, there isn't mesh function|
 | USB150 |  | >18.06 |  |
 | AR750 |  | >18.06 |  |
-| AR750S |  | >19.07 | Official OpenWrt19.07 only supports compiling nor firmware,  Official OpenWrt21.02 supports compiling nand firmware|
+| AR750S |  | 19.07(just nor)/>21.02(nor+nand) | |
 | X750 |  | >19.07 |  |
 | S1300 |  | >21.02 | emmc固件？Master是什么版本？|
-| N300 |  | >21.02 |  |
-| X1200 |  |  | 21.02还没有 |
+| N300 |  | >21.02 | GL fireware wifi drivers are closed source, we do not guarantee that OpenWrt drivers are stable |
+| X1200 |  |  | 21.02还没有? Must choose ath10k-firmware-qca9888-ct-htt and kmod-ath10k-ct packages |
 | MV1000 |  | >21.02 |  |
 | E750 |  | >21.02 |  |
 | AP1300 | https://github.com/openwrt/openwrt | >21.02 | We don't make patch for this project |
 | B2200 |  |  |  |
-| MT1300 |  | >21.02 |  |
+| MT1300 |  | >21.02 | GL fireware wifi drivers are closed source, we do not guarantee that OpenWrt drivers are stable |
 | XE300 |  |  |  |
 | X300B |  |  |  |
 | SF1200 |  |  |  |
