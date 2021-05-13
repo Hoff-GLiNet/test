@@ -39,13 +39,13 @@ Product Branch Relationship Table
 | MIFI | openwrt-18.06<br>openwrt-18.06.5<br>openwrt-19.07.7 | >17.01 |  |
 | AR300M | openwrt-18.06<br>openwrt-18.06.5<br>openwrt-19.07.7 | 17.01~19.07(nor)<br>>21.02(nor+nand) | |
 | MT300N-V2 | openwrt-18.06<br>openwrt-18.06.5<br>openwrt-19.07.7 | >18.06 | GL fireware wifi drivers are closed source, we do not guarantee that OpenWrt drivers are stable |
-| B1300 |  | >18.06 | GL fireware use QSDK, if you use openwrt to compile firmware, there isn't mesh function|
-| USB150 |  | >18.06 |  |
-| AR750 |  | >18.06 |  |
-| AR750S |  | 19.07(nor)<br>>21.02(nor+nand) | |
-| X750 |  | >19.07 |  |
-| S1300 |  | >21.02 | emmc固件？Master是什么版本？|
-| N300 |  | >21.02 | GL fireware wifi drivers are closed source, we do not guarantee that OpenWrt drivers are stable |
+| B1300 | openwrt-18.06<br>openwrt-18.06.5<br>openwrt-19.07.7 | >18.06 | GL fireware use QSDK, if you use openwrt to compile firmware, there isn't mesh function|
+| USB150 | openwrt-18.06<br>openwrt-18.06.5<br>openwrt-19.07.7 | >18.06 |  |
+| AR750 | openwrt-18.06<br>openwrt-18.06.5<br>openwrt-19.07.7 | >18.06 |  |
+| AR750S | openwrt-18.06<br>openwrt-18.06.5<br>openwrt-19.07.7 | 19.07(nor)<br>>21.02(nor+nand) | |
+| X750 | openwrt-18.06<br>openwrt-19.07.7 | >19.07 |  |
+| S1300 | openwrt-19.07.7 | >21.02 | emmc固件？Master是什么版本？|
+| N300 | openwrt-18.06<br>openwrt-19.07.7 | >21.02 | GL fireware wifi drivers are closed source, we do not guarantee that OpenWrt drivers are stable |
 | X1200 |  |  | 21.02还没有? Must choose ath10k-firmware-qca9888-ct-htt and kmod-ath10k-ct packages |
 | MV1000 |  | >21.02 |  |
 | E750 |  | >21.02 |  |
