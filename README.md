@@ -30,7 +30,7 @@ Branches Introduction
 
 Product Branch Relationship Table
 =======
-| Product | Branch | OpenWrt officially started to support the version | Other |
+| Product | Support Branch | OpenWrt Officially Version | Other |
 | :-----| :----- | :---- | :---- |
 | AR150 | openwrt-18.06, openwrt-18.06.5, openwrt-19.07.7 | 15.05 |  |
 | MIFI | openwrt-18.06, openwrt-18.06.5, openwrt-19.07.7 | 15.05 |  |
@@ -38,7 +38,7 @@ Product Branch Relationship Table
 | MT300N-V2 | openwrt-18.06, openwrt-18.06.5, openwrt-19.07.7 | 15.05 | The wifi drivers are closed source, we do not guarantee that OpenWrt drivers are stable |
 
 
-| AP1300 | https://github.com/openwrt/openwrt | We don't make patch for this project |
+| AP1300 | https://github.com/openwrt/openwrt | 19.07 | We don't make patch for this project |
 
 Prerequisites
 =============
