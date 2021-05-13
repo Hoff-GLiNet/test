@@ -30,8 +30,9 @@ Branches Introduction
 
 Product Branch Relationship Table
 =======
-Support Branch: Branches that support this product
-OpenWrt Officially: OpenWrt supports this product from the current release
+**Support Branch:** Branches that support this product
+
+**OpenWrt Officially:** OpenWrt supports this product from the current release
 | Product | Support Branch | OpenWrt Official | Remark |
 | :-----| :----- | :---- | :---- |
 | AR150 | openwrt-18.06/openwrt-18.06.5/openwrt-19.07.7 | >15.05 |  |
