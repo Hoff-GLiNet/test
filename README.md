@@ -49,7 +49,7 @@ Product Branch Relationship Table
 | X1200 | openwrt-18.06<br>openwrt-19.07.7 | N | Must choose ath10k-firmware-qca9888-ct-htt and kmod-ath10k-ct packages |
 | MV1000 | openwrt-19.07.7 | >21.02 |  |
 | E750 | openwrt-18.06<br>openwrt-19.07.7 | >21.02 |  |
-| AP1300 | N | >21.02 | You must use the official OpenWrt |
+| AP1300 | We don't make patch for this project, so you must use the official OpenWrt | >21.02 |  |
 | B2200 |  |  |  |
 | MT1300 | openwrt-19.07.7 | >21.02 | GL fireware wifi drivers are closed source, we do not guarantee that OpenWrt drivers are stable |
 | XE300 | openwrt-19.07.7 | N |  |
