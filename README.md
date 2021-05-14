@@ -44,7 +44,7 @@ Product Branch Relationship Table
 | AR750 | openwrt-18.06<br>openwrt-18.06.5<br>openwrt-19.07.7 | >18.06 |  |
 | AR750S | openwrt-18.06<br>openwrt-18.06.5<br>openwrt-19.07.7 | 19.07(nor)^<br>>21.02(nor+nand)^ | |
 | X750 | openwrt-18.06<br>openwrt-19.07.7 | >19.07 |  |
-| S1300 | openwrt-19.07.7(nor)<br>openwrt-trunk(emmc)^ | >21.02(nor)^ | |
+| S1300 | openwrt-19.07.7(nor)^<br>openwrt-trunk(emmc)^ | >21.02(nor)^ | |
 | N300 | openwrt-18.06<br>openwrt-19.07.7 | >21.02 | GL fireware wifi drivers are closed source, we do not guarantee that OpenWrt drivers are stable |
 | X1200 | openwrt-18.06<br>openwrt-19.07.7 | N | Must choose ath10k-firmware-qca9888-ct-htt and kmod-ath10k-ct packages |
 | MV1000 | openwrt-19.07.7 | >21.02 |  |
@@ -56,7 +56,11 @@ Product Branch Relationship Table
 | X300B | openwrt-18.06.5<br>openwrt-19.07.7 | N |  |
 | SF1200 |  |  |  |
 | AX1800 |  |  |  |
+^nor: Compiled firmware can only run on NOR
 
+^nor+nand: Can compile the firmware that runs on nor and nand
+
+^nor+emmc: Can compile the firmware that runs on nor and emmc
 Prerequisites
 =============
 
