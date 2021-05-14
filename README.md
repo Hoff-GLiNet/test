@@ -57,11 +57,11 @@ Product Branch Relationship Table
 | SF1200 |  |  |  |
 | AX1800 |  |  |  |
 
-^nor: Compiled firmware can only run on NOR
+^nor: Compiled firmware can only run on nor flash
 
-^nor+nand: Can compile the firmware that runs on nor and nand
+^nor+nand: Can compile the firmware that runs on nor flash and nand flash
 
-^nor+emmc: Can compile the firmware that runs on nor and emmc
+^nor+emmc: Can compile the firmware that runs on nor flash and emmc
 
 Prerequisites
 =============
