@@ -44,16 +44,16 @@ Product Branch Relationship Table
 | AR750 | openwrt-18.06<br>openwrt-18.06.5<br>openwrt-19.07.7 | >18.06 |  |
 | AR750S | openwrt-18.06<br>openwrt-18.06.5<br>openwrt-19.07.7 | 19.07(nor)<br>>21.02(nor+nand) | |
 | X750 | openwrt-18.06<br>openwrt-19.07.7 | >19.07 |  |
-| S1300 | openwrt-19.07.7 | >21.02 | emmc固件？Master是什么版本？|
+| S1300 | openwrt-19.07.7(nor)<br>openwrt-trunk(emmc) | >21.02(nor) | |
 | N300 | openwrt-18.06<br>openwrt-19.07.7 | >21.02 | GL fireware wifi drivers are closed source, we do not guarantee that OpenWrt drivers are stable |
-| X1200 | openwrt-18.06<br>openwrt-19.07.7 |  | 21.02还没有? Must choose ath10k-firmware-qca9888-ct-htt and kmod-ath10k-ct packages |
+| X1200 | openwrt-18.06<br>openwrt-19.07.7 | N | Must choose ath10k-firmware-qca9888-ct-htt and kmod-ath10k-ct packages |
 | MV1000 | openwrt-19.07.7 | >21.02 |  |
 | E750 | openwrt-18.06<br>openwrt-19.07.7 | >21.02 |  |
 | AP1300 | https://github.com/openwrt/openwrt | >21.02 | We don't make patch for this project |
 | B2200 |  |  |  |
 | MT1300 | openwrt-19.07.7 | >21.02 | GL fireware wifi drivers are closed source, we do not guarantee that OpenWrt drivers are stable |
-| XE300 | openwrt-19.07.7 |  |  |
-| X300B | openwrt-18.06.5<br>openwrt-19.07.7 |  |  |
+| XE300 | openwrt-19.07.7 | N |  |
+| X300B | openwrt-18.06.5<br>openwrt-19.07.7 | N |  |
 | SF1200 |  |  |  |
 | AX1800 |  |  |  |
 
