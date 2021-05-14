@@ -56,11 +56,13 @@ Product Branch Relationship Table
 | X300B | openwrt-18.06.5<br>openwrt-19.07.7 | N |  |
 | SF1200 |  |  |  |
 | AX1800 |  |  |  |
+
 ^nor: Compiled firmware can only run on NOR
 
 ^nor+nand: Can compile the firmware that runs on nor and nand
 
 ^nor+emmc: Can compile the firmware that runs on nor and emmc
+
 Prerequisites
 =============
 
