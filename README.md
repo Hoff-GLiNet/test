@@ -111,7 +111,7 @@ If you want to check the MCU firmware version, please following these steps.
 
 4. Execute the ***logread -f*** command to monitor the system log
 
-5. Open the second terminal useing SSH protocol, and then execute the ***echo {\"version\": \"1\"}      >/tmp/mcu_message  &&  killall -17 e750-mcu*** command
+5. Open the second terminal useing SSH protocol, and then execute the ***echo {\\"version\\": \\"1\\"} >/tmp/mcu_message && killall -17 e750-mcu*** command
 
 6. In the first terminal, you will see the **e750-mcu recived:xxx** message
 
