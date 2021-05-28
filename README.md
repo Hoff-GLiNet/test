@@ -113,7 +113,7 @@ If you want to check the MCU firmware version, please following these steps.
 
 5. Open the second terminal useing SSH protocol, and then execute the ***echo {\"version\": \"1\"}      >/tmp/mcu_message  &&  killall -17 e750-mcu*** command
 
-6. In the first terminal, you will see the e750-mcu recived:xxx message
+6. In the first terminal, you will see the **e750-mcu recived:xxx** message
 
 ### Compile .ipk
 #### 1. Compile on the glinet openwrt source
@@ -141,7 +141,7 @@ If you want to check the MCU firmware version, please following these steps.
 ### How to upgrade the mcu firmware
 1. Get the mcu firmware from GL sales or compile the firmware by youself use the source code
 
-2. Use the TFTP or SCP protocol to upload the MCU firmware to a directory on E750 file system. For example, my firmware is **e750-mcu-V1.0.5.bin** and I chose the directory is **tmp**, so the firmware path is **/tmp/e750-mcu-V1.0.5.bin**
+2. Use the TFTP or SCP protocol to upload the MCU firmware to a directory on E750 file system. For example, my firmware name is **e750-mcu-V1.0.5.bin** and I chose the directory is **/tmp**, so the firmware path is **/tmp/e750-mcu-V1.0.5.bin**
 
 3. Open the first terminal useing SSH protocol, execute the ***ubus  call  service delete '{"name":"e750_mcu"}'*** command to stop the mcu process, don't care the rerurn message
 
