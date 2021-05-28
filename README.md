@@ -1,213 +1,125 @@
-Overview
-========
+**Since the microcontroller only recognizes the string type in the JSON format, the following parameters, even if the parameter type is INT, will be converted to a string and sent**
 
-This repo is maintained by GL.iNet team, which is used to release stock firmware.
+### WIFI Related
 
-Feature
-=======
+| Parameter name | Type | Necessity | Default | Description                                            | Possible value                                |
+| :----------: | :-----: | :----------------: | ----------------- | ----------------- | ----------------- |
+|ssid|string|yes|" "|2G WiFi SSID|A string of up to 32 characters|
+|up|string|yes|"0"|Indicates whether 2G WIFI is enabled. If it is not enabled, the LCD will not display the 2G WIFI page.|0 or 1|
+|key|string|no|" "|2G WiFi password, if it is empty, it means no encryption, LCD shows OPEN|A string of up to 64 characters|
+|ssid_5g|string|yes|" "|5G WiFi SSID|A string of up to 32 characters|
+|up_5g|string|yes|"0"|Indicates whether 5G WIFI is enabled. If it is not enabled, the LCD will not display the 5G WIFI page.|0 or 1|
+|key_5g|string|no|" "|5G WiFi password, if it is empty, it means no encryption, LCD shows OPEN|A string of up to 64 characters|
+|hide_psk|string|no|"0"|Whether to hide the wifi password on the LCD|0 or 1|
 
-- Support latest device of GL.iNet
-- Support kernel driver which isn't support by kernel-tree
-- Keep updating with stock firmware
+### Modem related
 
-Branches Introduction
-=======
-- **openwrt-18.06-siflower** Only supports SF1200
+| Parameter name |  Type  | Necessity | Default  | Description                                                  | Possible value                                               |
+| :----------: | :-----: | :----------------: | ----------------- | ----------------- | ----------------- |
+|SIM|string|no|"NO_SIM"| SIM card status, there is no SIM parameter normally, if there is SIM parameter, other parameters will not be transferred | NO_SIM (No SIM card detected), PIN_SIM (PIN code required), NO_REG (No service) |
+|carrier|string|no|"0"|Carrier name|A string of up to 16 characters|
+|sms|string|no|"0"|/Number of text messages. If this parameter is greater than 0, the LCD displays the text message icon.|Numbers greater than 0|
+|signal|string|no|"0"|Signal strength|0~4|
+|modem_mode|string|no|" "|Network mode|2G，3G, 4G, 4G+|
+|modem_up|string|no|"0"|Whether the modem data is enabled|0 or 1|
 
-- **openwrt-18.06-s1300** Support compiling openwrt firmware for S1300
+### Network Related
 
-    If you need to flash OpenWrt firmware on S1300, you need to modify the partition table using the intermediate firmware in this branch
+| Parameter name |  Type  | Necessity | Default | Description                                                  | Possible value                                               |
+| :----------: | :-----: | :----------------: | ----------------- | ----------------- | ----------------- |
+|work_mode|string|yes|" "|Router network mode|Router,AP,WDS,Extender|
+|lan_ip|string|yes|" "| Router gateway address, or the IP address of the router under bridge mode |Legal IP address|
+|method_nw|string|yes|" "|Router's current Internet access| cable,repeater,modem,tethering, if there is extra information, use "\|" to separate them. For example, repeater&#124;GL-AR750S-081 |
 
-- **openwrt-18.06** Compile versions before 3.105 firmware based on this source code
+### VPN related
 
-- **openwrt-18.06.5** Compile version 3.105 firmware based on this source code
+| Parameter name |  Type  | Necessity | Default | Description            | Possible value                   |
+| :----------: | :-----: | :----------------: | ----------------- | ----------------- | ----------------- |
+|vpn_type|string|yes|" "|VPN protocol|openvpn,wireguard|
+|vpn_status|string|yes|" "|VPN connection status|connected，connecting，off|
+|vpn_server|string|yes|" "|VPN configuration name|A string of up to 128 characters|
 
-- **openwrt-19.07.7** Compile version 3.201 firmware based on this source code
+### Client related
 
-- **openwrt-trunk** Compile S1300 firmware supporting emmc
+| Parameter name |  Type  | Necessity | Default | Description       | Possible value                     |
+| :----------: | :-----: | :----------------: | ----------------- | ----------------- | ----------------- |
+|clients|string|yes|"0"|Number of clients|Numbers greater than or equal to 0|
 
-**For example, if you want to use openwrt-19.07.7 to compile the production firmware, you need to use *```git checkout openwrt-19.07.7```* command to switch openwrt-19.07.7 branch.**
+### customization related
 
-Product Branch Relationship Table
-=======
-**Support Branch:** Branches that support this product
+| Parameter name |  Type  | Necessity | Default | Description                                                  | Possible value                  |
+| :----------: | :-----: | :----------------: | ----------------- | ----------------- | ----------------- |
+| display_mask | string | no | "1f" | This value indicates whether the 1-5 screen is displayed. You need to convert this value to the corresponding binary when setting. For example, 0x03 converted to binary is 00011, which means that only the first screen and the second screen are displayed; the default 1f, that is, 11111, displays 5 screen contents |0x0-0x1f|
+| custom_en | string | no | "0" | This value indicates whether the user is using a custom page, 0 means not use, 1 means use |0 or 1|
+| content | string| no |" "| Display content | A string of up to 64 characters |
+|msg|string|no|" "|Display content on the screen for 20 seconds|A string of up to 64 characters|
 
-**Official OpenWrt :** Official OpenWrt supports this product from the current release
-| Product | Support Branch | Official OpenWrt | Remark |
-| :-----| :----- | :---- | :---- |
-| AR150 | openwrt-18.06<br>openwrt-18.06.5<br>openwrt-19.07.7 | >17.01 |  |
-| MIFI | openwrt-18.06<br>openwrt-18.06.5<br>openwrt-19.07.7 | >17.01 |  |
-| AR300M | openwrt-18.06<br>openwrt-18.06.5<br>openwrt-19.07.7 | 17.01~19.07(nor)^<br>>21.02(nor+nand)^ | |
-| MT300N-V2 | openwrt-18.06<br>openwrt-18.06.5<br>openwrt-19.07.7 | >18.06 | GL fireware wifi drivers are closed source, we do not guarantee that OpenWrt drivers are stable |
-| B1300 | openwrt-18.06<br>openwrt-18.06.5<br>openwrt-19.07.7 | >18.06 | GL fireware use QSDK, if you use openwrt to compile firmware, there isn't mesh function|
-| USB150 | openwrt-18.06<br>openwrt-18.06.5<br>openwrt-19.07.7 | >18.06 |  |
-| AR750 | openwrt-18.06<br>openwrt-18.06.5<br>openwrt-19.07.7 | >18.06 |  |
-| AR750S | openwrt-18.06<br>openwrt-18.06.5<br>openwrt-19.07.7 | 19.07(nor)^<br>>21.02(nor+nand)^ | |
-| X750 | openwrt-18.06<br>openwrt-19.07.7 | >19.07 |  |
-| S1300 | openwrt-19.07.7(nor)^<br>openwrt-trunk(emmc)^ | >21.02(nor)^ | |
-| N300 | openwrt-18.06<br>openwrt-19.07.7 | >21.02 | GL fireware wifi drivers are closed source, we do not guarantee that OpenWrt drivers are stable |
-| X1200 | openwrt-18.06<br>openwrt-19.07.7 | N | Must choose ath10k-firmware-qca9888-ct-htt and kmod-ath10k-ct packages |
-| MV1000 | openwrt-19.07.7 | >21.02 |  |
-| E750 | openwrt-18.06<br>openwrt-19.07.7 | >21.02 |  |
-| AP1300 | We don't make patch for this project, so you must use the official OpenWrt | >21.02 |  |
-| B2200 |  |  |  |
-| MT1300 | openwrt-19.07.7 | >21.02 | GL fireware wifi drivers are closed source, we do not guarantee that OpenWrt drivers are stable |
-| XE300 | openwrt-19.07.7 | N |  |
-| X300B | openwrt-18.06.5<br>openwrt-19.07.7 | N |  |
-| SF1200 |  |  |  |
-| AX1800 |  |  |  |
+### system related
 
-^nor: Compiled firmware can only run on nor flash
+| Parameter name |  Type  | Necessity | Default | Description                                   | Possible value                                               |
+| :----------: | :-----: | :----------------: | ----------------- | ----------------- | ----------------- |
+|button|string|no|"0"|The time the reset button was pressed|Numbers greater than or equal to 0|
+|system|string|no|"boot"|Show system status on screen|reboot (reboot), reft (restore factory settings), adding (system upgrade), gouboot (enter uboot mode), boot (boot), Calibrate stage (calibration stage), Flash stage (waiting to upgrade standard firmware stage), Test stage 1 (Test Phase 1), Test stage 2 （Test Phase 2）|
+|disk|string|no|"0"| Is there a disk                               |0 or 1|
+|tor|string|no|"0"|Is it the Tor firmware|0 or 1|
+|debug|string|no|"0"|Whether to print debug information in logread|0 or 1|
 
-^nor+nand: Can compile the firmware that runs on nor flash and nand flash
+### MCU status related
 
-^nor+emmc: Can compile the firmware that runs on nor flash and emmc
+| Parameter name |  Type  | Necessity | Default | Description                                                  | Possible value |
+| :----------: | :-----: | :----------------: | ----------------- | ----------------- | ----------------- |
+|mcu_status|string|no|NO|Get the status of the microcomputer, send the command within 1 second, the microcomputer will return the relevant data through the serial port, which are the percentage of power, the temperature of the coulometer, the state of charge, the number of battery charging cycles, and the battery voltage|  |
 
-Prerequisites
-=============
+### screen test
 
-To build your own firmware you need to have access to a Linux, BSD or MacOSX system (case-sensitive filesystem required). Cygwin will not be supported because of the lack of case sensitiveness in the file system. Ubuntu is usually recommended.
+| Parameter name |  Type  | Necessity | Default | Description                    | Possible value                            |
+| :----------: | :-----: | :----------------: | ----------------- | ----------------- | ----------------- |
+|lcd_test|string|no|NO|Test the screen for bad pixels|1 (light up all pixels) or 0 (off screen)|
 
-Installing Packages
--------------------
+### coulometer parameter query
 
-```bash
-$ sudo apt-get update
-$ sudo apt-get install build-essential subversion libncurses5-dev zlib1g-dev gawk gcc-multilib flex git-core gettext libssl-dev
-```
+| Parameter name |  Type  | Necessity | Default | Description                                            | Possible value |
+| :----------: | :-----: | :----------------: | ----------------- | ----------------- | ----------------- |
+|QEN|string|no|NO| Check if the coulometer algorithm is enabled ||
+|chemid|string|no|NO| Check coulometer file version                          ||
+|high_temp|string|no|72| Set high temperature shutdown value, don't set too low ||
 
-Downloading Source
-------------------
+### MCU firmware version query
 
-```
-$ git clone https://github.com/gl-inet/openwrt.git openwrt
-$ cd openwrt
-```
+| Parameter name |  Type  | Necessity | Default | Description                | Possible value |
+| :----------: | :-----: | :----------------: | ----------------- | ----------------- | ----------------- |
+|version|string|no|NO| Check MCU firmware version ||
 
-Updating Feeds
---------------
-
-```
-$ ./scripts/feeds update -a
-$ ./scripts/feeds install -a
-```
-
-Note that if you have all the source already, just put them in your *openwrt/dl* folder and you save time to download resource.
-
-Clear temp buffer
------------------
+### Application example
+**Use the echo command directly to send data in json format to the system serial port. This example contains basic WIFI information, SIM card information, VPN status, client status, time, etc. The MCU_status parameter is included in the example, which indicates that the microcontroller is required to return status**
 
 ```
-$ rm ./tmp -rf
+echo '{ "ssid_5g": "GL-E750-719", "up_5g": "1", "key_5g": "goodlife", "ssid": "GL-E750-719", "up": "1", "key": "goodlife", "SIM": "NO_SIM", "work_mode": "Router", "lan_ip": "192.168.82.1",  "vpn_status": "off", "clients": "1", "clock": "02:30", "mcu_status": "1" }' >/dev/ttyS0
 ```
-
-
-Compile firmware for NOR flash
-=======
-Suitable for all products
-
-Select target
--------------
-Issueing **make menuconfig** to select a GL.iNet device, for example AR300M.
+**After the command is executed, the serial port will return the status within 1 second. The return value is as follows. Each parameter is separated by a comma, where {OK} indicates successful execution, 99 indicates that 99% of the current power is left, and 42.4 indicates that the current coulometer Temperature, 1 means charging, 2 means the battery has two charge and discharge cycles****
 
 ```
-$ make menuconfig
+{OK},99,42.4,1,2
 ```
-
-Please select options as following:
-
-	Target System (Atheros AR7xxx/AR9xxx)  --->
-
-	Subtarget (Generic)  --->
-
-	Target Profile (GL-AR300M)  --->
-
-Then select common software package (as you need),such as USB driver as following,
-
-    GL.iNet packages choice shortcut  --->
-
-       [ ] Select basic packages
-           Select VPN  --->
-       [*] Support storage
-       [*] Support USB
-       [ ] Support webcam
-       [ ] Support rtc
-
-If the package you want to brush depends on the GL base package, please Select **Select basic packages** as well. Which packages the GL base package contains can be found in *config/config-glinet.in*
-
-Compile
--------
-Simply running **make V=s -j5** will build your own firmware. It will download all sources, build the cross-compile toolchain, the kernel and all choosen applications which is spent on several hours.
-
-```
-$ make V=s -j5
-```
-
-
-Notice **V=s**, this parameter is purpose to check info when compile.
-**-j5**, this parameter is for choosing the cpu core number, 5 means using 4 cores.
-If there’s error, please use **make V=s -j1** to recompile, and check the error.
-
-Target file location for NOR flash
------------------------------------
-The final firmware file is **bin/ar71xx/openwrt-ar71xx-generic-gl-ar300m-squashfs-sysupgrade.bin**
-so this file is the firmware we need, please update firmware again.
-Please refer to other instructions for further operations. Such as flash the firmware, etc.
-
-
-Compile firmware for NAND flash
-=====
-Applicable to GL-AR300M GL-AR750S GL-E750 GL-X1200 GL-X750
-
-Select target
--------------
-Issueing **make menuconfig** to select a GL.iNet device, for example AR300M.
-
-```
-$ make menuconfig
-```
-
-Please select options as following:
-
-	Target System (Atheros AR7xxx/AR9xxx)  --->
-
-	Subtarget (Generic devices with NAND flash)  --->
-
-	Target Profile (GL-AR300M NAND)  --->
-
-Then select common software package (as you need),such as USB driver as following,
-
-    GL.iNet packages choice shortcut  --->
-
-       [ ] Select basic packages
-           Select VPN  --->
-       [*] Support storage
-       [*] Support USB
-       [ ] Support webcam
-       [ ] Support rtc
-
-If the package you want to brush depends on the GL base package, please Select **Select basic packages** as well. Which packages the GL base package contains can be found in *config/config-glinet.in*
-
-Compile
--------
-Simply running **make V=s -j5** will build your own firmware. It will download all sources, build the cross-compile toolchain, the kernel and all choosen applications which is spent on several hours.
-
-```
-$ make V=s -j5
-```
-
-Notice **V=s**, this parameter is purpose to check info when compile.
-**-j5**, this parameter is for choosing the cpu core number, 5 means using 4 cores.
-If there’s error, please use **make V=s -j1** to recompile, and check the error.
-
-Target file location for NAND flash
------------------------------------
-
-The final firmware file is:
-
-**bin/ar71xx/openwrt-ar71xx-nand-gl-ar300m-rootfs-squashfs.ubi**
-
-**bin/ar71xx/openwrt-ar71xx-nand-gl-ar300m-squashfs-sysupgrade.tar**
-
-So this file is the firmware we need, please update firmware again.
-Please refer to other instructions for further operations. Such as flash the firmware, etc.
+### Compile .ipk
+#### 1. Compile on the glinet openwrt source
+	$cd openwrt_root          #go to your openwrt source root
+	$./scripts/feeds update -f -a
+	$./scripts/feeds install -f -a
+	$make menuconfig
+	  GL.iNet packages choice shortcut  ---> 
+	    Select MCU  --->
+	      <*> Support GL_E750_MCU
+	$make package/feeds/gli_pub/gl-e750-mcu/{clean,compile} V=s
+	$ls bin/packages/mips_24kc/gli_pub/gl-e750-mcu_2020-06-08-f8c77bdb-1_mips_24kc.ipk
+  
+#### 2. Compile on the other openwrt source
+	$cd openwrt_root          #go to your openwrt source root
+	$cd package
+	$git clone https://github.com/gl-inet/GL-E750-MCU-instruction.git
+	$cd ..
+	$make menuconfig
+	  gl-inet  ---> 
+	    <*> gl-e750-mcu........................................ GL iNet mcu interface
+	$make package/GL-E750-MCU-instruction/{clean,compile} V=s
+	$ls bin/packages/mips_24kc/base/gl-e750-mcu_2020-06-08-f8c77bdb-1_mips_24kc.ipk
