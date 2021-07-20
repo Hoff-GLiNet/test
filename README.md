@@ -45,7 +45,7 @@ $ git clone https://github.com/gl-inet/gl-infra-builder.git
 $ cd gl-infra-builder
 ```
 
-2. If you have a [offline dl folder](https://sources.openwrt.org/) and corresponding packages, you can make a symlink to feeds/dl(assuming the dl location is /data/dl), it will make compilation easier. If there is no dl and corresponding packages, ignore this command.
+2. If you have a [offline dl folder](https://sources.openwrt.org/) and corresponding packages, you can make a symlink to feeds/dl (assuming the dl location is /data/dl), it will make compilation easier. If there is no dl and corresponding packages, ignore this command.
 
 ```
 $ ln -sf /data/dl feeds/
@@ -58,19 +58,19 @@ $ python3 setup.py
 $ cd openwrt-19.07/openwrt-19.07.7/
 ```
 
-Note: If you want to use different branch, please use the -c parameter, for example, if you want to use 18.06
+Note: If you want to use different branch, please use the -c parameter, for example. If you want to use 18.06
 
 ```
 $ python3 setup.py -c config-18.x.yml
 ```
 
-4. Generate your target configuration.(For the following content, we will continue to take 19.07 as an example)
+4. Generate your target configuration. (For the following content, we will continue to take 19.07 as an example)
 
 ```
 $ ./scripts/gen_config.py list		# show available profile
 $ ./scripts/gen_config.py <target_profile> <function_profile>
 ```
-Note: excute ./scripts/gen_config.py list command, you can get Target Profiles and Function Profiles. Target Profiles is you want to compile product, don't modify. Function Profiles is you want to add/delete packages, you can modify. Those files in the profiles directory.
+Note: excute ./scripts/gen_config.py list command, you can get Target Profiles and Function Profiles. Target Profiles is you want to compile products, don't modify. Function Profiles is you want to add/delete packages, you can modify. Those files in the **profiles** directory.
 
 For example, If you want to compile GL-AR150 product you can use command:
 ```
@@ -79,7 +79,7 @@ $ ./scripts/gen_config.py target_ar71xx_gl-ar150
 
 If you want to compile GL-AR150 product and add some packages, you can modify profiles/glinet_ar150.yml
 For example, you can add curl kmod-use-serial-ch341 qos-scripts and delete dnsmasq
-
+```
 ---
 description: Add the glinet dependencies
 feeds:
@@ -94,14 +94,14 @@ packages:
 diffconfig: 
   CONFIG_PACKAGE_qos-scripts=y
   CONFIG_PACKAGE_dnsmasq=n
-
+```
 and then  excute the following command
 
 ```
 $ ./scripts/gen_config.py target_ar71xx_gl-ar150 glinet_ar150
 ```
 
-If you feel use Target Profiles and Function Profiles is complicated, you can excute 'make menuconfig' to chose the product and other packages.
+If you feel use Target Profiles and Function Profiles is complicated, you can excute **make menuconfig** to chose the product and other packages.
 
 6. Run `make` to build your firmware.
 
