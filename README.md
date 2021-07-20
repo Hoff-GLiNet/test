@@ -79,7 +79,7 @@ $ ./scripts/gen_config.py target_ar71xx_gl-ar150
 
 If you want to compile GL-AR150 product and add some packages, you can modify profiles/glinet_ar150.yml
 
-For example, you can add curl kmod-use-serial-ch341 qos-scripts and delete dnsmasq
+For example, if you want to add curl kmod-use-serial-ch341 qos-scripts and delete dnsmasq, you can modify glinet_ar150.yml like this:
 ```
 ---
 description: Add the glinet dependencies
