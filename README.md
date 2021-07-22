@@ -117,7 +117,7 @@ Close the method: add useless address or your upgrade server in the /etc/config/
 config service 'autoupdate'
         option time '04:00'
         option enable '0'
-        **option firmware_path 'http://www.google.com'**
+        option firmware_path 'http://www.google.com'
 
 ```
 The uci command to add address is as follows.
