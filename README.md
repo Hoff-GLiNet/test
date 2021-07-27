@@ -1,8 +1,6 @@
 # Under development, please do not use
 
-## Development
-
-### Requirements
+## Requirements
 
 You need the following tools to compile OpenWrt, the package names vary between distributions. A complete list with distribution specific packages is found in the [Build System Setup](https://openwrt.org/docs/guide-developer/build-system/install-buildsystem) documentation.
 
