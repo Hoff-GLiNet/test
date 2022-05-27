@@ -35,13 +35,6 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install device-tree-compiler gawk gcc git g++ make ncurses-dev python unzip -y
 ```
 
-## Clone the Imagebuilder to your system
-
-```bash
-git clone https://github.com/gl-inet/imagebuilder gl_imagebuilder
-cd gl_imagebuilder
-```
-
 **Note for Windows Subsystem For Linux (WSL) users:**
 
 The Imagebuilder requires a "case sensitive" system, Windows is unfortunately not. To run the Imagebuilder in WSL you **MUST** clone the repo to the linux folder tree, ie: ```/home/<username>/``` or any other folder you choose. This is required, you **CAN NOT** run it from ```/mnt/c/``` or any other windows native drive mounted in WSL. Running the Imagebuilder from a Windows mounted disk will result in a failed build with cryptic messages.
