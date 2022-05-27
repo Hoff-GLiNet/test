@@ -39,7 +39,6 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install device-tree-compiler gawk gcc git g++ make ncurses-dev python unzip -y
 ```
 
-
 # Usage
 
 ## Compile standard firmware based on GL.iNet.
