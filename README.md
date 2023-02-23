@@ -57,9 +57,9 @@ $ ls -l /usr/bin/python3*
    
 # Example compile firmware
 
-##1. Compile MT2500(2023.02.22)
+## 1. Compile MT2500(2023.02.22)
 
-1.1 Compile MT2500 OpenWrt firmware(No GL.iNet packages)
+1.1  Compile MT2500 OpenWrt firmware(No GL.iNet packages)
 ```
  git clone https://github.com/gl-inet/gl-infra-builder.git
 ```
@@ -92,7 +92,7 @@ $ ls -l /usr/bin/python3*
 ```
  make V=s -j5 GL_PKGDIR=`pwd`/glinet4.x/mt7981/
 ```
-##2. Compile MT300(2023.02.22)
+## 2. Compile MT300(2023.02.22)
 
 2.1 Compile MT3000 OpenWrt firmware(No GL.iNet packages)
 ```
@@ -128,7 +128,7 @@ $ ls -l /usr/bin/python3*
  make -j5 V=s  GL_PKGDIR=`pwd`/glinet4.x/mt7981/
 ```
 
-##3. Compile AXT1800(2023.02.22)
+## 3. Compile AXT1800(2023.02.22)
 
 3.1 Compile AXT1800 OpenWrt firmware(No GL.iNet packages)
 ```
@@ -159,7 +159,7 @@ $ ls -l /usr/bin/python3*
 ```
  make V=s -j5 GL_PKGDIR=`pwd`/glinet4.x/ipq60xx/
 ```
-##4. Compile AX1800(2023.02.22)
+## 4. Compile AX1800(2023.02.22)
 
 4.1 Compile AX1800 OpenWrt firmware(No GL.iNet packages)
 ```
@@ -190,7 +190,7 @@ $ ls -l /usr/bin/python3*
 ```
  make V=s -j5 GL_PKGDIR=`pwd`/glinet4.x/ipq60xx/
 ```
-##5. Compile A1300(2023.02.22)
+## 5. Compile A1300(2023.02.22)
 
 5.1 Compile A1300 OpenWrt firmware(No GL.iNet packages)
 ```
@@ -222,7 +222,7 @@ $ ls -l /usr/bin/python3*
  make V=s -j5 GL_PKGDIR=`pwd`/glinet4.x/ipq40xx/
 ```
 
-##6. Compile SFT1200(2022.11.23)
+## 6. Compile SFT1200(2022.11.23)
 ```
  git clone https://github.com/gl-inet/gl-infra-builder.git
 ```
