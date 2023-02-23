@@ -59,7 +59,7 @@ $ ls -l /usr/bin/python3*
 
 ## 1. Compile MT2500(2023.02.22)
 
-1.1  Compile MT2500 OpenWrt firmware(No GL.iNet packages)
+  1.1  Compile MT2500 OpenWrt firmware(No GL.iNet packages)
 ```
  git clone https://github.com/gl-inet/gl-infra-builder.git
 ```
@@ -79,7 +79,7 @@ $ ls -l /usr/bin/python3*
  make V=s -j5
 ```
 
-1.2 Compile MT2500 GL.iNet standard firmware
+  1.2 Compile MT2500 GL.iNet standard firmware
 ```
  git clone https://github.com/gl-inet/glinet4.x.git
 ```
