@@ -61,16 +61,10 @@ $ ls -l /usr/bin/python3*
 
   1.1  Compile MT2500 OpenWrt firmware(No GL.iNet packages)
 ```
- git clone https://github.com/gl-inet/gl-infra-builder.git
+ git clone https://github.com/gl-inet/gl-infra-builder.git && cd gl-infra-builder
 ```
 ```
- cd gl-infra-builder
-```
-```
- python3 setup.py -c  configs/config-mt798x-7.6.6.1.yml
-```
-```
- cd mt7981
+ python3 setup.py -c  configs/config-mt798x-7.6.6.1.yml && cd mt7981
 ```
 ```
  ./scripts/gen_config.py target_mt7981_gl-mt2500 luci
@@ -248,8 +242,6 @@ $ ls -l /usr/bin/python3*
 /usr/bin/ld: scripts/dtc/dtc-parser.tab.o:(.bss+0x10): multiple definition of `yylloc'; scripts/dtc/dtc-lexer.lex.o:(.bss+0x0): first defined here
 collect2: error：ld returned 1 exit status.
 ```
-
-
 You should execute the following command to reduce the gcc version:
 ```
 $ update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 100
