@@ -64,7 +64,7 @@ $ ls -l /usr/bin/python3*
  git clone https://github.com/gl-inet/gl-infra-builder.git && cd gl-infra-builder
 ```
 ```
- python3 setup.py -c  configs/config-mt798x-7.6.6.1.yml && cd mt7981
+ python3 setup.py -c configs/config-mt798x-7.6.6.1.yml && cd mt7981
 ```
 ```
  ./scripts/gen_config.py target_mt7981_gl-mt2500 luci
@@ -90,16 +90,10 @@ $ ls -l /usr/bin/python3*
 
 2.1 Compile MT3000 OpenWrt firmware(No GL.iNet packages)
 ```
- git clone https://github.com/gl-inet/gl-infra-builder.git
+ git clone https://github.com/gl-inet/gl-infra-builder.git && cd gl-infra-builder
 ```
 ```
- cd gl-infra-builder
-```
-```
- python3 setup.py -c configs/config-mt798x-7.6.6.1.yml
-```
-```
- cd mt7981
+ python3 setup.py -c configs/config-mt798x-7.6.6.1.yml && cd mt7981
 ```
 ```
  ./scripts/gen_config.py target_mt7981_gl-mt3000 luci
@@ -113,32 +107,26 @@ $ ls -l /usr/bin/python3*
  git clone https://github.com/gl-inet/glinet4.x.git
 ```
 ```
- cp ./glinet4.x/pkg_config/gl_pkg_config_mt7981_mt3000.mk  ./glinet4.x/mt7981/gl_pkg_config.mk
+ cp ./glinet4.x/pkg_config/gl_pkg_config_mt7981_mt3000.mk ./glinet4.x/mt7981/gl_pkg_config.mk
 ```
 ```
  ./scripts/gen_config.py target_mt7981_gl-mt3000 glinet_depends
 ```
 ```
- make -j5 V=s  GL_PKGDIR=`pwd`/glinet4.x/mt7981/
+ make -j5 V=s GL_PKGDIR=`pwd`/glinet4.x/mt7981/
 ```
 
 ## 3. Compile AXT1800(2023.02.22)
 
 3.1 Compile AXT1800 OpenWrt firmware(No GL.iNet packages)
 ```
- git clone https://github.com/gl-inet/gl-infra-builder.git
+ git clone https://github.com/gl-inet/gl-infra-builder.git && cd gl-infra-builder
 ```
 ```
- cd gl-infra-builder
+ python3 setup.py -c configs/config-wlan-ap.yml && cd wlan-ap/openwrt
 ```
 ```
- python3 setup.py -c configs/config-wlan-ap.yml
-```
-```
- cd wlan-ap/openwrt
-```
-```
- ./scripts/gen_config.py target_wlan_ap-gl-axt1800 luci glinet_depends
+ ./scripts/gen_config.py target_wlan_ap-gl-axt1800 luci
 ```
 ```
  make V=s -j5
@@ -157,16 +145,10 @@ $ ls -l /usr/bin/python3*
 
 4.1 Compile AX1800 OpenWrt firmware(No GL.iNet packages)
 ```
- git clone https://github.com/gl-inet/gl-infra-builder.git
+ git clone https://github.com/gl-inet/gl-infra-builder.git && cd gl-infra-builder
 ```
 ```
- cd gl-infra-builder
-```
-```
- python3 setup.py -c configs/config-wlan-ap.yml
-```
-```
- cd wlan-ap/openwrt
+ python3 setup.py -c configs/config-wlan-ap.yml && cd wlan-ap/openwrt
 ```
 ```
  ./scripts/gen_config.py target_wlan_ap-gl-ax1800 luci
@@ -188,16 +170,10 @@ $ ls -l /usr/bin/python3*
 
 5.1 Compile A1300 OpenWrt firmware(No GL.iNet packages)
 ```
- git clone https://github.com/gl-inet/gl-infra-builder.git
+ git clone https://github.com/gl-inet/gl-infra-builder.git && cd gl-infra-builder
 ```
 ```
- cd gl-infra-builder
-```
-```
- python3 setup.py -c configs/config-21.02.2.yml
-```
-```
- cd openwrt-21.02/openwrt-21.02.2
+ python3 setup.py -c configs/config-21.02.2.yml && cd openwrt-21.02/openwrt-21.02.2
 ```
 ```
  ./scripts/gen_config.py target_ipq40xx_gl-a1300 luci
@@ -218,19 +194,13 @@ $ ls -l /usr/bin/python3*
 
 ## 6. Compile SFT1200(2022.11.23)
 ```
- git clone https://github.com/gl-inet/gl-infra-builder.git
+ git clone https://github.com/gl-inet/gl-infra-builder.git && cd gl-infra-builder
 ```
 ```
- cd gl-infra-builder
+ python3 setup.py -c config-siflower-18.x.yml && cd openwrt-18.06/siflower/openwrt-18.06
 ```
 ```
- python3 setup.py -c config-siflower-18.x.yml
-```
-```
- cd openwrt-18.06/siflower/openwrt-18.06
-```
-```
- ./scripts/gen_config.py target_siflower_gl-sft1200
+ ./scripts/gen_config.py target_siflower_gl-sft1200 luci
 ```
 ```
  make V=s -j5
