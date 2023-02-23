@@ -79,7 +79,7 @@ $ ls -l /usr/bin/python3*
  make V=s -j5
 ```
 
-  1.2 Compile MT2500 GL.iNet standard firmware
+1.2 Compile MT2500 GL.iNet standard firmware
 ```
  git clone https://github.com/gl-inet/glinet4.x.git
 ```
@@ -248,6 +248,7 @@ $ ls -l /usr/bin/python3*
 /usr/bin/ld: scripts/dtc/dtc-parser.tab.o:(.bss+0x10): multiple definition of `yylloc'; scripts/dtc/dtc-lexer.lex.o:(.bss+0x0): first defined here
 collect2: error：ld returned 1 exit status.
 ```
+1. If you gcc version is 10, you will encounter some error, like this:
 You should execute the following command to reduce the gcc version:
 ```
 $ update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 100
